@@ -21,10 +21,10 @@ ENV APP_DIR /app
 
 WORKDIR ${APP_DIR}
 COPY src .
-RUN deno install app.ts
+RUN deno install --unstable --allow-plugin app.ts
 
 ENTRYPOINT ["deno"]
 
 EXPOSE 8080
 
-CMD ["run", "--allow-env", "--allow-net", "app.ts"]
+CMD ["run", "--allow-net", "--allow-plugin", "--unstable", "--allow-read", "--allow-write", "--allow-env", "app.ts"]
