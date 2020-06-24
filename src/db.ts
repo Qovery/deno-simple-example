@@ -1,4 +1,4 @@
-import { MongoClient } from "https://deno.land/x/mongo@v0.7.0/mod.ts";
+import { MongoClient } from "https://deno.land/x/mongo@v0.8.0/mod.ts";
 
 const env = Deno.env.toObject();
 const connectionUri = env.QOVERY_DATABASE_MY_MONGO_CONNECTION_URI || "mongodb://localhost:27017";
